@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>iQuipsys Positron - Unsupported browser</title>
+	<link rel="stylesheet" href="pip-webui-lib.min.css" />
+    <link rel="stylesheet" href="pip-webui.min.css" />
+	<style>
+		.pip-error-scroll-body {
+			display: table;
+			height: inherit;
+		}
+		.pip-error-page {
+			height: 100%;
+		}
+		.pip-error-page .pip-error-details {
+			flex-wrap: wrap;
+			max-width: 500px!important;
+		}
+		.iqs-main {
+			color: rgba(0,0,0,0.87);
+			background-color: #eee;
+		}
+	</style>
+	<script>
+		var totalElementsToTranslate = 14;
+	
+		function waitForElements(count, callBack){
+			window.setTimeout(function(){
+				var elements = document.querySelectorAll('[translate]');
+				if(elements.length === count){
+					callBack(elements);
+				} else {
+					waitForElement(count, callback);
+				}
+			},500);
+		}
+	
+		var translations = {
+			ru: {
+				'ERROR_UNSUPPORTED_TITLE': 'Этот браузер не поддерживается. ',
+				'ERROR_UNSUPPORTED_SUBTITLE': 'Наше приложение использует новейшие технологии. Это делает приложение более быстрым ' +
+					'и простым в использовании. К сожалению, ваш браузер не поддерживает эти технологии. ' +
+					'Загрузите один из этих великолепных браузеров, и вы будете в пути:',
+				'ERROR_UNSUPPORTED_VER': 'Версия'
+			}			
+		};
+		var userLang = navigator.language || navigator.userLanguage;
+		if (/ru/.test(userLang)) {
+			waitForElements(totalElementsToTranslate, function (elements) {
+				for (var i = 0; i < totalElementsToTranslate; i++) {
+					var element = elements[i];
+					var attr = element.attributes.translate.value;
+					if (translations.ru.hasOwnProperty(attr)) {
+						element.innerText = translations.ru[attr];
+					}
+				}
+			});
+		}
+	</script>
+</head>
+
+<body class="layout-column iqs-main default">
+	<div class="pip-error-scroll-body pip-scroll h-stretch">
+    <div class="pip-error pip-error-page layout-column flex layout-align-center-center">
+        <div class="pip-error-text" translate="ERROR_UNSUPPORTED_TITLE">This browser is not supported</div>
+        <div class="pip-error-subtext" translate="ERROR_UNSUPPORTED_SUBTITLE">
+            Our application using the latest technology. This makes the application faster and easier to use. Unfortunately, your browser doesn't support those technologies. Download one of these great browsers and you'll be on your way:
+        </div>
+        <div class="pip-error-details layout-row layout-align-center-center">
+            <div class="pip-error-details-item layout-column layout-align-center-center">
+                <div style="background-image: url('images/edge.svg');" class="pip-pic"></div>
+                <div class="h64 tp16 bp16 text-center">
+                    <a class="text-body2 m0" target="_blank"
+                       href="https://microsoft-edge.en.softonic.com/download">
+                        Edge
+                    </a>
+                    <p class="text-body1 m0"><span translate="ERROR_UNSUPPORTED_VER">Version</span> 12+</p>
+                </div>
+            </div>
+
+            <div class="pip-error-details-item layout-column layout-align-center-center">
+                <div style="background-image: url('images/fm.svg');" class="pip-pic"></div>
+                <div class="h64 tp16 bp16 text-center">
+                    <a class="text-body2 m0" target="_blank"
+                       href="https://www.mozilla.org/ru/firefox/new/">
+                        Mozilla Firefox
+                    </a>
+                    <p class="text-body1 m0"><span translate="ERROR_UNSUPPORTED_VER">Version</span> 47+</p>
+                </div>
+            </div>
+            <div class="pip-error-details-item layout-column layout-align-center-center">
+                <div style="background-image: url('images/gc.svg');" class="pip-pic"></div>
+                <div class="h64 tp16 bp16 text-center">
+                    <a class="text-body2 m0" target="_blank"
+                       href="https://www.google.com/chrome/browser/desktop/index.html?platform=win64#">
+                        Google Chrome
+                    </a>
+                    <p class="text-body1 m0"><span translate="ERROR_UNSUPPORTED_VER">Version</span> 56+</p>
+                </div>
+            </div>
+            <div class="pip-error-details-item layout-column layout-align-center-center">
+                <div style="background-image: url('images/o.svg');" class="pip-pic"></div>
+                <div class="h64 tp16 bp16 text-center">
+                    <a class="text-body2 m0" target="_blank"
+                       href="http://www.opera.com/ru/download">
+                        Opera
+                    </a>
+                    <p class="text-body1 m0"><span translate="ERROR_UNSUPPORTED_VER">Version</span> 34+</p>
+                </div>
+            </div>
+
+            <div class="pip-error-details-item layout-column layout-align-center-center">
+                <div style="background-image: url('images/safari.svg');" class="pip-pic"></div>
+                <div class="h64 tp16 bp16 text-center">
+                    <a class="text-body2 m0" target="_blank"
+                       href="https://safari.en.softonic.com/">
+                        Safari
+                    </a>
+                    <p class="text-body1 m0"><span translate="ERROR_UNSUPPORTED_VER">Version</span> 6+</p>
+                </div>
+            </div>  
+
+			<div class="pip-error-details-item layout-column layout-align-center-center">
+                <div style="background-image: url('images/yab.svg');" class="pip-pic"></div>
+                <div class="h64 tp16 bp16 text-center">
+                    <a class="text-body2 m0" target="_blank"
+                       href="https://getyabrowser.com/">
+                        Yandex Browser
+                    </a>
+                    <p class="text-body1 m0"><span translate="ERROR_UNSUPPORTED_VER">Version</span> 17.10+</p>
+                </div>
+            </div> 
+        </div>
+    </div>
+    </div>
+</body>
+</html>
